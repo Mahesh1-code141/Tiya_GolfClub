@@ -2,7 +2,7 @@ pipeline {
 agent any
 
 environment {
-    DOCKER_IMAGE = "mahesh2452/GolfClub_project_img"
+    DOCKER_IMAGE = "mahesh2452/golfclub_project_img"
 }
 
 stages {
@@ -38,8 +38,8 @@ stages {
     stage('Deploy Container') {
         steps {
             sh '''
-            docker rm -f GolfClub_cont || true
-	    docker run -d -p 80:80 --name GolfClub_cont $DOCKER_IMAGE:latest
+            docker rm -f golfclub_cont || true
+	    docker run -d -p 80:80 --name golfclub_cont $DOCKER_IMAGE:latest
             '''
         }
     }
